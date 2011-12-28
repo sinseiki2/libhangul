@@ -188,6 +188,7 @@ struct _HangulBuffer {
     ucschar choseong;
     ucschar jungseong;
     ucschar jongseong;
+    ucschar state;
 
     ucschar stack[12];
     int     index;
@@ -289,6 +290,7 @@ hangul_buffer_clear(HangulBuffer *buffer)
     buffer->choseong = 0;
     buffer->jungseong = 0;
     buffer->jongseong = 0;
+    buffer->state = 0;
 
     buffer->index = -1;
     buffer->stack[0]  = 0;
@@ -332,7 +334,7 @@ hangul_buffer_get_jamo_string(HangulBuffer *buffer, ucschar *buf, int buflen)
 }
 
 static int
-hangul_jaso_to_string(ucschar cho, ucschar jung, ucschar jong,
+hangul_jaso_to_string(ucschar cho, ucschar jung, ucschar jong, ucschar mode,
 		      ucschar *buf, int len)
 {
     ucschar ch = 0;
@@ -402,6 +404,9 @@ hangul_jaso_to_string(ucschar cho, ucschar jung, ucschar jong,
 	    }
 	}
     }
+    if (mode) {
+        buf[n++] = mode;
+    }
     buf[n] = 0;
 
     return n;
@@ -413,6 +418,7 @@ hangul_buffer_get_string(HangulBuffer *buffer, ucschar *buf, int buflen)
     return hangul_jaso_to_string(buffer->choseong,
 				 buffer->jungseong,
 				 buffer->jongseong,
+				 buffer->state,
 				 buf, buflen);
 }
 
@@ -471,7 +477,7 @@ hangul_ic_push(HangulInputContext *hic, ucschar c)
 	    return false;
 	}
 
-	hangul_jaso_to_string(cho, jung, jong, buf, N_ELEMENTS(buf));
+	hangul_jaso_to_string(cho, jung, jong, hic->buffer.state, buf, N_ELEMENTS(buf));
 	if (!hic->on_transition(hic, c, buf, hic->on_transition_data)) {
 	    hangul_ic_flush_internal(hic);
 	    return false;
@@ -868,6 +874,211 @@ hangul_ic_process_jaso(HangulInputContext *hic, ucschar ch)
 }
 
 static bool
+hangul_ic_process_gureum(HangulInputContext *hic, ucschar ch)
+{
+    ucschar mode_key = hangul_keyboard_get_mode_key(hic->keyboard);
+
+    if (hangul_is_choseong(ch)) {
+        if (hic->buffer.choseong == 0) {
+            if (!hangul_ic_push(hic, ch)) {
+                if (!hangul_ic_push(hic, ch)) {
+                    return false;
+                }
+            }
+        } else {
+            ucschar choseong = 0;
+            if (hangul_is_choseong(hangul_ic_peek(hic))) {
+                choseong = hangul_ic_combine(hic, hic->buffer.choseong, ch);
+            }
+            if (choseong) {
+                if (!hangul_ic_push(hic, choseong)) {
+                    if (!hangul_ic_push(hic, choseong)) {
+                        return false;
+                    }
+                }
+            } else {
+                ucschar jungseong = hic->buffer.state;
+                hic->buffer.state = 0;
+                hangul_ic_save_commit_string(hic);
+                if (jungseong) {
+                    hangul_ic_push(hic, jungseong);
+                }
+                if (!hangul_ic_push(hic, ch)) {
+                    return false;
+                }
+            }
+        }
+    } else if (ch == mode_key) {
+        if (hic->buffer.state) {
+            if (hic->buffer.state == mode_key) {
+                hangul_ic_save_commit_string(hic);
+                hangul_ic_append_commit_string(hic, ch);
+            } else {
+                ucschar jongseong = hangul_ic_combine(hic, hic->buffer.state, ch);
+                if (jongseong) {
+                    hic->buffer.state = 0;
+                    if (!hangul_ic_push(hic, jongseong)) {
+                        if (jongseong < 0x100) {
+                            hangul_ic_save_commit_string(hic);
+                            hangul_ic_append_commit_string(hic, jongseong);
+                        } else if (!hangul_ic_push(hic, jongseong)) {
+                            return false;
+                        }
+                    }
+                } else {
+                    hangul_ic_save_commit_string(hic);
+                    hangul_ic_append_commit_string(hic, ch);
+                }
+            }
+        } else if (hic->buffer.jongseong == 0) {
+            hic->buffer.state = ch;
+
+            if (hic->buffer.jungseong) {
+                ucschar jongseong = hangul_ic_combine(hic, hic->buffer.jungseong, ch);
+                if (jongseong) {
+                    hic->buffer.jongseong = jongseong;
+                }
+            }
+        } else {
+            ucschar jongseong = 0;
+            if (hangul_is_jongseong(hangul_ic_peek(hic))) {
+                jongseong = hangul_ic_combine(hic, hic->buffer.jongseong, ch);
+            }
+            if (jongseong) {
+                if (!hangul_ic_push(hic, jongseong)) {
+                    if (!hangul_ic_push(hic, jongseong)) {
+                        return false;
+                    }
+                }
+            } else {
+                hangul_ic_save_commit_string(hic);
+                hangul_ic_append_commit_string(hic, ch);
+            }
+        }
+    } else if (hangul_is_jungseong(ch)) {
+        if (hic->buffer.jungseong == 0) {
+            if (!hangul_ic_push(hic, ch)) {
+                if (!hangul_ic_push(hic, ch)) {
+                    return false;
+                }
+            }
+        } else if (hangul_is_jungseong(hic->buffer.state)) {
+            ucschar jungseong = hic->buffer.state;
+            hic->buffer.state = 0;
+            hangul_ic_save_commit_string(hic);
+            hangul_ic_push(hic, jungseong);
+            hic->buffer.state = ch;
+        } else if (hic->buffer.state) {
+            if (hic->buffer.jungseong == 0) {
+                if (!hangul_ic_push(hic, ch)) {
+                    if (!hangul_ic_push(hic, ch)) {
+                        return false;
+                    }
+                }
+            }
+            ucschar jongseong = 0;
+            jongseong = hangul_ic_combine(hic, ch, hic->buffer.state);
+            if (jongseong) {
+                hic->buffer.state = 0;
+                if (jongseong < 0x100) {
+                    hic->buffer.jongseong = 0;
+                    hangul_ic_save_commit_string(hic);
+                    hangul_ic_append_commit_string(hic, jongseong);
+                } else if (!hangul_ic_push(hic, jongseong)) {
+                    if (!hangul_ic_push(hic, jongseong)) {
+                        return false;
+                    }
+                }
+            } else {
+                hangul_ic_save_commit_string(hic);
+                if (!hangul_ic_push(hic, ch)) {
+                    if (!hangul_ic_push(hic, ch)) {
+                        return false;
+                    }
+                }
+            }
+        } else {
+            ucschar jungseong = 0;
+            if (hangul_is_jungseong(hangul_ic_peek(hic))) {
+                jungseong = hangul_ic_combine(hic, hic->buffer.jungseong, ch);
+            }
+            if (jungseong) {
+                if (!hangul_ic_push(hic, jungseong)) {
+                    if (!hangul_ic_push(hic, jungseong)) {
+                        return false;
+                    }
+                }
+            } else if (!hangul_is_jungseong(hic->buffer.state)) {
+                hic->buffer.state = ch;
+            } else {
+                hangul_ic_save_commit_string(hic);
+                if (!hangul_ic_push(hic, ch)) {
+                    if (!hangul_ic_push(hic, ch)) {
+                        return false;
+                    }
+                }
+            }
+        }
+    } else if (hangul_is_jongseong(ch)) {
+        if (hic->buffer.state == mode_key && hic->buffer.jongseong) {
+            hic->buffer.jongseong = 0;
+        }
+        if (hic->buffer.jongseong == 0) {
+            if (hangul_is_jungseong(hic->buffer.state)) {
+                ucschar jungseong = hic->buffer.state;
+                hic->buffer.state = 0;
+                hangul_ic_save_commit_string(hic);
+                hangul_ic_push(hic, jungseong);
+                hangul_ic_push(hic, ch);
+            } else {
+                ucschar jongseong = 0;
+                if (hic->buffer.state) {
+                    jongseong = hangul_ic_combine(hic, ch, hic->buffer.state);
+                }
+                if (!jongseong) {
+                    jongseong = ch;
+                } else {
+                    hic->buffer.state = 0;
+                }
+                if (!hangul_ic_push(hic, jongseong)) {
+                    if (!hangul_ic_push(hic, jongseong)) {
+                        return false;
+                    }
+                }
+            }
+        } else {
+            ucschar jongseong = 0;
+            if (hangul_is_jongseong(hangul_ic_peek(hic))) {
+                jongseong = hangul_ic_combine(hic, hic->buffer.jongseong, ch);
+            }
+            if (jongseong) {
+                if (!hangul_ic_push(hic, jongseong)) {
+                    if (!hangul_ic_push(hic, jongseong)) {
+                        return false;
+                    }
+                }
+            } else {
+                hangul_ic_save_commit_string(hic);
+                if (!hangul_ic_push(hic, ch)) {
+                    if (!hangul_ic_push(hic, ch)) {
+                        return false;
+                    }
+                }
+            }
+        }
+    } else if (ch > 0) {
+        hangul_ic_save_commit_string(hic);
+        hangul_ic_append_commit_string(hic, ch);
+    } else {
+        hangul_ic_save_commit_string(hic);
+        return false;
+    }
+
+    hangul_ic_save_preedit_string(hic);
+    return true;
+}
+
+static bool
 hangul_ic_process_romaja(HangulInputContext *hic, int ascii, ucschar ch)
 {
     ucschar jong;
@@ -1094,6 +1305,8 @@ hangul_ic_process(HangulInputContext *hic, int ascii)
 	return hangul_ic_process_jaso(hic, c);
     case HANGUL_KEYBOARD_TYPE_ROMAJA:
 	return hangul_ic_process_romaja(hic, ascii, c);
+    case HANGUL_KEYBOARD_TYPE_GUREUM:
+	return hangul_ic_process_gureum(hic, c);
     default:
 	return hangul_ic_process_jamo(hic, c);
     }

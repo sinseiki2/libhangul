@@ -89,6 +89,7 @@ struct _HangulKeyboard {
     HangulCombination* combination[4];
 
     int type;
+    ucschar mode_key;
     bool is_static;
 };
 
@@ -504,6 +505,20 @@ hangul_keyboard_set_type(HangulKeyboard *keyboard, int type)
 }
 
 void
+hangul_keyboard_set_mode_key(HangulKeyboard *keyboard, ucschar key)
+{
+    if (keyboard != NULL) {
+        keyboard->mode_key = key;
+    }
+}
+
+ucschar
+hangul_keyboard_get_mode_key(HangulKeyboard *keyboard)
+{
+    return keyboard->mode_key;
+}
+
+void
 hangul_keyboard_delete(HangulKeyboard *keyboard)
 {
     if (keyboard == NULL)
@@ -600,6 +615,10 @@ on_element_start(void* data, const XML_Char* element, const XML_Char** attr)
 	    type = HANGUL_KEYBOARD_TYPE_JASO_YET;
 	} else if (strcmp(typestr, "romaja") == 0) {
 	    type = HANGUL_KEYBOARD_TYPE_ROMAJA;
+	} else if (strcmp(typestr, "gureum") == 0) {
+	    type = HANGUL_KEYBOARD_TYPE_GUREUM;
+            ucschar mode_key = attr_lookup_as_uint(attr, "mode");
+            hangul_keyboard_set_mode_key(context->keyboard, mode_key);
 	}
 
 	hangul_keyboard_set_type(context->keyboard, type);

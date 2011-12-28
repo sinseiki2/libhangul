@@ -87,6 +87,7 @@ enum {
     HANGUL_KEYBOARD_TYPE_ROMAJA,
     HANGUL_KEYBOARD_TYPE_JAMO_YET,
     HANGUL_KEYBOARD_TYPE_JASO_YET,
+    HANGUL_KEYBOARD_TYPE_GUREUM=99, // non-official
 };
 
 enum {
@@ -104,6 +105,8 @@ HangulKeyboard* hangul_keyboard_new(void);
 HangulKeyboard* hangul_keyboard_new_from_file(const char* path);
 void    hangul_keyboard_delete(HangulKeyboard *keyboard);
 void    hangul_keyboard_set_type(HangulKeyboard *keyboard, int type);
+void    hangul_keyboard_set_mode_key(HangulKeyboard *keyboard, ucschar key);
+ucschar    hangul_keyboard_get_mode_key(HangulKeyboard *keyboard);
 
 unsigned int hangul_keyboard_list_get_count();
 const char* hangul_keyboard_list_get_keyboard_id(unsigned index_);
