@@ -1177,6 +1177,139 @@ static const ucschar hangul_keyboard_table_ahn[] = {
     0x0000      /* 0x7F delete                                       */
 };
 
+static const ucschar hangul_keyboard_table_3finalsun[] = {
+    0x0000,     /* 0x00 null                                         */
+    0x0000,     /* 0x01 start of heading                             */
+    0x0000,     /* 0x02 start of text                                */
+    0x0000,     /* 0x03 end of text                                  */
+    0x0000,     /* 0x04 end of transmission                          */
+    0x0000,     /* 0x05 enquiry                                      */
+    0x0000,     /* 0x06 acknowledge                                  */
+    0x0000,     /* 0x07 bell                                         */
+    0x0000,     /* 0x08 backspace                                    */
+    0x0000,     /* 0x09 character tabulation                         */
+    0x0000,     /* 0x0A line feed (lf)                               */
+    0x0000,     /* 0x0B line tabulation                              */
+    0x0000,     /* 0x0C form feed (ff)                               */
+    0x0000,     /* 0x0D carriage return (cr)                         */
+    0x0000,     /* 0x0E shift out                                    */
+    0x11a7,     /* 0x0F shift in                                     */
+    0x0000,     /* 0x10 data link escape                             */
+    0x0000,     /* 0x11 device control one                           */
+    0x0000,     /* 0x12 device control two                           */
+    0x0000,     /* 0x13 device control three                         */
+    0x0000,     /* 0x14 device control four                          */
+    0x0000,     /* 0x15 negative acknowledge                         */
+    0x0000,     /* 0x16 synchronous idle                             */
+    0x0000,     /* 0x17 end of transmission block                    */
+    0x0000,     /* 0x18 cancel                                       */
+    0x0000,     /* 0x19 end of medium                                */
+    0x0000,     /* 0x1A substitute                                   */
+    0x0000,     /* 0x1B escape                                       */
+    0x0000,     /* 0x1C information separator four                   */
+    0x0000,     /* 0x1D information separator three                  */
+    0x0000,     /* 0x1E information separator two                    */
+    0x0000,     /* 0x1F information separator one                    */
+    0x0000,     /* 0x20 space                                        */
+    0x11a9,     /* 0x21 exclam:         jongseong ssangkiyeok        */
+    0x00b7,     /* 0x22 quotedbl:       middle dot                   */
+    0x11bd,     /* 0x23 numbersign:     jognseong cieuc              */
+    0x11b5,     /* 0x24 dollar:         jongseong rieul-phieuph      */
+    0x11b4,     /* 0x25 percent:        jongseong rieul-thieuth      */
+    0x201c,     /* 0x26 ampersand:      left double quotation mark   */
+    0x1110,     /* 0x27 apostrophe:     choseong  thieuth            */
+    0x0027,     /* 0x28 parenleft:      apostrophe                   */
+    0x007e,     /* 0x29 parenright:     Tilde                        */
+    0x201d,     /* 0x2A asterisk:       right double quotation mark  */
+    0x002b,     /* 0x2B plus:           plus sign                    */
+    0x002c,     /* 0x2C comma:          comma                        */
+    0x0029,     /* 0x2D minus:          right parenthesis            */
+    0x002e,     /* 0x2E period:         period                       */
+    0x116c,     /* 0x2F slash:          jungseong oe                 */
+    0x110f,     /* 0x30 0:              choseong  khieukh            */
+    0x11c2,     /* 0x31 1:              jongseong hieuh              */
+    0x11bb,     /* 0x32 2:              jongseong ssangsios          */
+    0x11b8,     /* 0x33 3:              jongseong pieup              */
+    0x116d,     /* 0x34 4:              jungseong yo                 */
+    0x1172,     /* 0x35 5:              jungseong yu                 */
+    0x1163,     /* 0x36 6:              jungseong ya                 */
+    0x1168,     /* 0x37 7:              jungseong ye                 */
+    0x1174,     /* 0x38 8:              jungseong yi                 */
+    0x1171,     /* 0x39 9:              jungseong wi                 */
+    0x0034,     /* 0x3A colon:          4                            */
+    0x1107,     /* 0x3B semicolon:      choseong  pieup              */
+    0x002c,     /* 0x3C less:           comma                        */
+    0x003e,     /* 0x3D equal:          greater-than sign            */
+    0x002e,     /* 0x3E greater:        period                       */
+    0x0021,     /* 0x3F question:       exclamation mark             */
+    0x11b0,     /* 0x40 at:             jongseong rieul-kiyeok       */
+    0x11ae,     /* 0x41 A:              jongseong tikeut             */
+    0x003f,     /* 0x42 B:              question mark                */
+    0x11bf,     /* 0x43 C:              jongseong khieukh            */
+    0x11b2,     /* 0x44 D:              jongseong rieul-pieup        */
+    0x11ac,     /* 0x45 E:              jongseong nieun-cieuc        */
+    0x11b1,     /* 0x46 F:              jongseong rieul-mieum        */
+    0x1164,     /* 0x47 G:              jungseong yae                */
+    0x0030,     /* 0x48 H:              0                            */
+    0x0037,     /* 0x49 I:              7                            */
+    0x0031,     /* 0x4A J:              1                            */
+    0x0032,     /* 0x4B K:              2                            */
+    0x0033,     /* 0x4C L:              3                            */
+    0x0022,     /* 0x4D M:              double quotation mark        */
+    0x002d,     /* 0x4E N:              minus sign                   */
+    0x0038,     /* 0x4F O:              8                            */
+    0x0039,     /* 0x50 P:              9                            */
+    0x11c1,     /* 0x51 Q:              jongseong phieuph            */
+    0x11b6,     /* 0x52 R:              jongseong rieul-hieuh        */
+    0x11ad,     /* 0x53 S:              jongseong nieun-hieuh        */
+    0x11b3,     /* 0x54 T:              jongseong rieul-sios         */
+    0x0036,     /* 0x55 U:              6                            */
+    0x11aa,     /* 0x56 V:              jongseong kiyeok-sios        */
+    0x11c0,     /* 0x57 W:              jongseong thikeuth           */
+    0x11b9,     /* 0x58 X:              jongseong pieup-sios         */
+    0x0035,     /* 0x59 Y:              5                            */
+    0x11be,     /* 0x5A Z:              jongseong chieuch            */
+//    0x0028,     /* 0x5B bracketleft:    left parenthesis             */
+    0x11a7,     /* 0x5B bracketleft:    left parenthesis             */
+    0x003a,     /* 0x5C backslash:      colon                        */
+    0x003c,     /* 0x5D bracketright:   less-than sign               */
+    0x003d,     /* 0x5E asciicircum:    equals sign                  */
+    0x003b,     /* 0x5F underscore:     semicolon                    */
+    0x002a,     /* 0x60 quoteleft:      asterisk                     */
+    0x11bc,     /* 0x61 a:              jongseong ieung              */
+    0x116e,     /* 0x62 b:              jungseong u                  */
+    0x1166,     /* 0x63 c:              jungseong e                  */
+    0x1175,     /* 0x64 d:              jungseong i                  */
+    0x1167,     /* 0x65 e:              jungseong yeo                */
+    0x1161,     /* 0x66 f:              jungseong a                  */
+    0x1173,     /* 0x67 g:              jungseong eu                 */
+    0x1102,     /* 0x68 h:              choseong  nieun              */
+    0x1106,     /* 0x69 i:              choseong  mieum              */
+    0x110b,     /* 0x6A j:              choseong  ieung              */
+    0x1100,     /* 0x6B k:              choseong  kiyeok             */
+    0x110c,     /* 0x6C l:              choseong  cieuc              */
+    0x1112,     /* 0x6D m:              choseong  hieuh              */
+    0x1109,     /* 0x6E n:              choseong  sios               */
+    0x110e,     /* 0x6F o:              choseong  chieuch            */
+    0x1111,     /* 0x70 p:              choseong  phieuph            */
+    0x11ba,     /* 0x71 q:              jongseong sios               */
+    0x1162,     /* 0x72 r:              jungseong ae                 */
+    0x11ab,     /* 0x73 s:              jongseong nieun              */
+    0x1165,     /* 0x74 t:              jungseong eo                 */
+    0x1103,     /* 0x75 u:              choseong  tikeut             */
+    0x1169,     /* 0x76 v:              jungseong o                  */
+    0x11af,     /* 0x77 w:              jongseong rieul              */
+    0x11a8,     /* 0x78 x:              jongseong kiyeok             */
+    0x1105,     /* 0x79 y:              choseong  rieul              */
+    0x11b7,     /* 0x7A z:              jongseong mieum              */
+    0x0025,     /* 0x7B braceleft:      percent sign                 */
+    0x005c,     /* 0x7C bar:            backslash                    */
+    0x002f,     /* 0x7D braceright:     slash                        */
+    0x203b,     /* 0x7E asciitilde:     reference mark               */
+    0x0000      /* 0x7F delete                                       */
+};
+
+
 static const HangulCombinationItem hangul_combination_table_2[] = {
   { 0x11691161, 0x116a }, /* jungseong o      + a       = wa            */
   { 0x11691162, 0x116b }, /* jungseong o      + ae      = wae           */
@@ -1765,3 +1898,278 @@ static const HangulCombinationItem hangul_combination_table_ahn[] = {
   { 0x11c211bd, 0x11be }, /* jongseong hieuh        + cieuc  = chieuch       */
   { 0x11ce11c2, 0x11b4 }, /* jongseong rieul-tikeut + hieuh  = rieul-thieuth */
 };
+
+static const HangulCombinationItem hangul_combination_table_3finalsun[] = {
+    { 0x11001100, 0x1101 }, /* choseong  kiyeok + kiyeok  = ssangkiyeok   */
+    { 0x1100110b, 0x1101 }, /* choseong  kiyeok + ieung   = ssangkiyeok   */
+    { 0x1100110c, 0x110d }, /* choseong  kiyeok + cieuc   = ssangcieuc    */
+    { 0x11031103, 0x1104 }, /* choseong  tikeut + tikeut  = ssangtikeut   */
+    { 0x11031106, 0x1104 }, /* choseong  tikeut + mieum   = ssangtikeut   */
+    { 0x11061103, 0x1104 }, /* choseong  mieum  + tikeut  = ssangtikeut   */
+    { 0x11071107, 0x1108 }, /* choseong  pieup  + pieup   = ssangpieup    */
+    { 0x1107110c, 0x1108 }, /* choseong  pieup  + cieuc   = ssangpieup    */
+    { 0x11091109, 0x110a }, /* choseong  sios   + sios    = ssangsios     */
+    { 0x11091112, 0x110a }, /* choseong  sios   + hieuh   = ssangsios     */
+    { 0x110b1100, 0x1101 }, /* choseong  ieung  + kiyeok  = ssangkiyeok   */
+    { 0x110c1100, 0x110d }, /* choseong  cieuc  + kiyeok  = ssangcieuc    */
+    { 0x110c1107, 0x1108 }, /* choseong  cieuc  + pieup   = ssangpieup    */
+    { 0x110c110c, 0x110d }, /* choseong  cieuc  + cieuc   = ssangcieuc    */
+    { 0x11121109, 0x110a }, /* choseong  hieuh  + sios    = ssangsios     */
+    /* jungseong */
+    { 0x1161116c, 0x116a }, /* jungseong a      + oe      = wa            */
+    { 0x1162116c, 0x116b }, /* jungseong ae     + oe      = wae           */
+    { 0x11651171, 0x116f }, /* jungseong eo     + wi      = weo           */
+    { 0x1166116c, 0x1170 }, /* jungseong e      + oe      = we            */
+    { 0x11661171, 0x1170 }, /* jungseong e      + wi      = we            */
+    { 0x116c1161, 0x116a }, /* jungseong oe     + a       = wa            */
+    { 0x116c1162, 0x116b }, /* jungseong oe     + ae      = wae           */
+    { 0x116c1165, 0x116f }, /* jungseong oe     + eo      = weo           */
+    { 0x116c1166, 0x1170 }, /* jungseong oe     + e       = we            */
+    { 0x116c1173, 0x1164 }, /* jungseong oe     + eu      = yae           */
+    { 0x116c1175, 0x116c }, /* jungseong oe     + i       = oe            */
+    { 0x11711165, 0x116f }, /* jungseong wi     + eo      = weo           */
+    { 0x11711166, 0x1170 }, /* jungseong wi     + e       = we            */
+    { 0x11711175, 0x1171 }, /* jungseong wi     + i       = wi            */
+    { 0x1173116c, 0x1164 }, /* jungseong eu     + oe      = yae           */
+    { 0x11731175, 0x1174 }, /* jungseong eu     + i       = yi            */
+    { 0x11751171, 0x1171 }, /* jungseong i      + wi      = wi            */
+    { 0x1175116c, 0x116c }, /* jungseong i      + oe      = oe            */
+    { 0x11751173, 0x1174 }, /* jungseong i      + eu      = yi            */
+    /* quick shift jongseong part */
+    { 0x11a71161, 0x11b1 }, /* jongseong rieul-mieum */
+    { 0x11a71162, 0x11b6 }, /* jongseong rieul-hieuh */
+    { 0x11a71163, 0x11b3 }, /* jongseong rieul-siot additional */
+    { 0x11a71165, 0x11b9 }, /* jongseong pieup-sios */
+    { 0x11a71166, 0x11bf }, /* jongseong khieukh */    
+    { 0x11a71167, 0x11ac }, /* jongseong nieun-cieuc */
+    { 0x11a71169, 0x11aa }, /* jongseong kiyeok-sios */
+    { 0x11a7116d, 0x11b5 }, /* jongseong rieul-phieuph */
+    { 0x11a71172, 0x11b4 }, /* jongseong rieul-thieuth */
+    { 0x11a71175, 0x11b2 }, /* jongseong rieul-pieup */   
+    /* autogen */
+    { 0x11a711a8, 0x11b9 }, // autogen
+    { 0x11a711ab, 0x11ad }, // autogen
+    { 0x11a711af, 0x11c0 }, // autogen
+    { 0x11a711b7, 0x11be }, // autogen
+    { 0x11a711ba, 0x11c1 }, // autogen
+    { 0x11a711bb, 0x11b0 }, // autogen
+    { 0x11a711bc, 0x11ae }, // autogen
+    { 0x11a711bd, 0x11bd }, // autogen
+    { 0x11a711c2, 0x11a9 }, // autogen
+    { 0x11a811a7, 0x11b9 }, // autogen
+    { 0x11a811aa, 0x11b9 }, // autogen
+    { 0x11a811ac, 0x11b9 }, // autogen
+    { 0x11a811b1, 0x11b9 }, // autogen
+    { 0x11a811b2, 0x11b9 }, // autogen
+    { 0x11a811b3, 0x11b9 }, // autogen
+    { 0x11a811b4, 0x11b9 }, // autogen
+    { 0x11a811b5, 0x11b9 }, // autogen
+    { 0x11a811b6, 0x11b9 }, // autogen
+    { 0x11a811b9, 0x11b9 }, // autogen
+    { 0x11a811bf, 0x11b9 }, // autogen
+    { 0x11aa11a8, 0x11b9 }, // autogen
+    { 0x11aa11ab, 0x11ad }, // autogen
+    { 0x11aa11af, 0x11c0 }, // autogen
+    { 0x11aa11b7, 0x11be }, // autogen
+    { 0x11aa11ba, 0x11c1 }, // autogen
+    { 0x11aa11bb, 0x11b0 }, // autogen
+    { 0x11aa11bc, 0x11ae }, // autogen
+    { 0x11aa11bd, 0x11bd }, // autogen
+    { 0x11aa11c2, 0x11a9 }, // autogen
+    { 0x11ab11a7, 0x11ad }, // autogen
+    { 0x11ab11aa, 0x11ad }, // autogen
+    { 0x11ab11ac, 0x11ad }, // autogen
+    { 0x11ab11b1, 0x11ad }, // autogen
+    { 0x11ab11b2, 0x11ad }, // autogen
+    { 0x11ab11b3, 0x11ad }, // autogen
+    { 0x11ab11b4, 0x11ad }, // autogen
+    { 0x11ab11b5, 0x11ad }, // autogen
+    { 0x11ab11b6, 0x11ad }, // autogen
+    { 0x11ab11b9, 0x11ad }, // autogen
+    { 0x11ab11bf, 0x11ad }, // autogen
+    { 0x11ac11a8, 0x11b9 }, // autogen
+    { 0x11ac11ab, 0x11ad }, // autogen
+    { 0x11ac11af, 0x11c0 }, // autogen
+    { 0x11ac11b7, 0x11be }, // autogen
+    { 0x11ac11ba, 0x11c1 }, // autogen
+    { 0x11ac11bb, 0x11b0 }, // autogen
+    { 0x11ac11bc, 0x11ae }, // autogen
+    { 0x11ac11bd, 0x11bd }, // autogen
+    { 0x11ac11c2, 0x11a9 }, // autogen
+    { 0x11af11a7, 0x11c0 }, // autogen
+    { 0x11af11aa, 0x11c0 }, // autogen
+    { 0x11af11ac, 0x11c0 }, // autogen
+    { 0x11af11b1, 0x11c0 }, // autogen
+    { 0x11af11b2, 0x11c0 }, // autogen
+    { 0x11af11b3, 0x11c0 }, // autogen
+    { 0x11af11b4, 0x11c0 }, // autogen
+    { 0x11af11b5, 0x11c0 }, // autogen
+    { 0x11af11b6, 0x11c0 }, // autogen
+    { 0x11af11b9, 0x11c0 }, // autogen
+    { 0x11af11bf, 0x11c0 }, // autogen
+    { 0x11b111a8, 0x11b9 }, // autogen
+    { 0x11b111ab, 0x11ad }, // autogen
+    { 0x11b111af, 0x11c0 }, // autogen
+    { 0x11b111b7, 0x11be }, // autogen
+    { 0x11b111ba, 0x11c1 }, // autogen
+    { 0x11b111bb, 0x11b0 }, // autogen
+    { 0x11b111bc, 0x11ae }, // autogen
+    { 0x11b111bd, 0x11bd }, // autogen
+    { 0x11b111c2, 0x11a9 }, // autogen
+    { 0x11b211a8, 0x11b9 }, // autogen
+    { 0x11b211ab, 0x11ad }, // autogen
+    { 0x11b211af, 0x11c0 }, // autogen
+    { 0x11b211b7, 0x11be }, // autogen
+    { 0x11b211ba, 0x11c1 }, // autogen
+    { 0x11b211bb, 0x11b0 }, // autogen
+    { 0x11b211bc, 0x11ae }, // autogen
+    { 0x11b211bd, 0x11bd }, // autogen
+    { 0x11b211c2, 0x11a9 }, // autogen
+    { 0x11b311a8, 0x11b9 }, // autogen
+    { 0x11b311ab, 0x11ad }, // autogen
+    { 0x11b311af, 0x11c0 }, // autogen
+    { 0x11b311b7, 0x11be }, // autogen
+    { 0x11b311ba, 0x11c1 }, // autogen
+    { 0x11b311bb, 0x11b0 }, // autogen
+    { 0x11b311bc, 0x11ae }, // autogen
+    { 0x11b311bd, 0x11bd }, // autogen
+    { 0x11b311c2, 0x11a9 }, // autogen
+    { 0x11b411a8, 0x11b9 }, // autogen
+    { 0x11b411ab, 0x11ad }, // autogen
+    { 0x11b411af, 0x11c0 }, // autogen
+    { 0x11b411b7, 0x11be }, // autogen
+    { 0x11b411ba, 0x11c1 }, // autogen
+    { 0x11b411bb, 0x11b0 }, // autogen
+    { 0x11b411bc, 0x11ae }, // autogen
+    { 0x11b411bd, 0x11bd }, // autogen
+    { 0x11b411c2, 0x11a9 }, // autogen
+    { 0x11b511a8, 0x11b9 }, // autogen
+    { 0x11b511ab, 0x11ad }, // autogen
+    { 0x11b511af, 0x11c0 }, // autogen
+    { 0x11b511b7, 0x11be }, // autogen
+    { 0x11b511ba, 0x11c1 }, // autogen
+    { 0x11b511bb, 0x11b0 }, // autogen
+    { 0x11b511bc, 0x11ae }, // autogen
+    { 0x11b511bd, 0x11bd }, // autogen
+    { 0x11b511c2, 0x11a9 }, // autogen
+    { 0x11b611a8, 0x11b9 }, // autogen
+    { 0x11b611ab, 0x11ad }, // autogen
+    { 0x11b611af, 0x11c0 }, // autogen
+    { 0x11b611b7, 0x11be }, // autogen
+    { 0x11b611ba, 0x11c1 }, // autogen
+    { 0x11b611bb, 0x11b0 }, // autogen
+    { 0x11b611bc, 0x11ae }, // autogen
+    { 0x11b611bd, 0x11bd }, // autogen
+    { 0x11b611c2, 0x11a9 }, // autogen
+    { 0x11b711a7, 0x11be }, // autogen
+    { 0x11b711aa, 0x11be }, // autogen
+    { 0x11b711ac, 0x11be }, // autogen
+    { 0x11b711b1, 0x11be }, // autogen
+    { 0x11b711b2, 0x11be }, // autogen
+    { 0x11b711b3, 0x11be }, // autogen
+    { 0x11b711b4, 0x11be }, // autogen
+    { 0x11b711b5, 0x11be }, // autogen
+    { 0x11b711b6, 0x11be }, // autogen
+    { 0x11b711b9, 0x11be }, // autogen
+    { 0x11b711bf, 0x11be }, // autogen
+    { 0x11b911a8, 0x11b9 }, // autogen
+    { 0x11b911ab, 0x11ad }, // autogen
+    { 0x11b911af, 0x11c0 }, // autogen
+    { 0x11b911b7, 0x11be }, // autogen
+    { 0x11b911ba, 0x11c1 }, // autogen
+    { 0x11b911bb, 0x11b0 }, // autogen
+    { 0x11b911bc, 0x11ae }, // autogen
+    { 0x11b911bd, 0x11bd }, // autogen
+    { 0x11b911c2, 0x11a9 }, // autogen
+    { 0x11ba11a7, 0x11c1 }, // autogen
+    { 0x11ba11aa, 0x11c1 }, // autogen
+    { 0x11ba11ac, 0x11c1 }, // autogen
+    { 0x11ba11b1, 0x11c1 }, // autogen
+    { 0x11ba11b2, 0x11c1 }, // autogen
+    { 0x11ba11b3, 0x11c1 }, // autogen
+    { 0x11ba11b4, 0x11c1 }, // autogen
+    { 0x11ba11b5, 0x11c1 }, // autogen
+    { 0x11ba11b6, 0x11c1 }, // autogen
+    { 0x11ba11b9, 0x11c1 }, // autogen
+    { 0x11ba11bf, 0x11c1 }, // autogen
+    { 0x11bb11a7, 0x11b0 }, // autogen
+    { 0x11bb11aa, 0x11b0 }, // autogen
+    { 0x11bb11ac, 0x11b0 }, // autogen
+    { 0x11bb11b1, 0x11b0 }, // autogen
+    { 0x11bb11b2, 0x11b0 }, // autogen
+    { 0x11bb11b3, 0x11b0 }, // autogen
+    { 0x11bb11b4, 0x11b0 }, // autogen
+    { 0x11bb11b5, 0x11b0 }, // autogen
+    { 0x11bb11b6, 0x11b0 }, // autogen
+    { 0x11bb11b9, 0x11b0 }, // autogen
+    { 0x11bb11bf, 0x11b0 }, // autogen
+    { 0x11bc11a7, 0x11ae }, // autogen
+    { 0x11bc11aa, 0x11ae }, // autogen
+    { 0x11bc11ac, 0x11ae }, // autogen
+    { 0x11bc11b1, 0x11ae }, // autogen
+    { 0x11bc11b2, 0x11ae }, // autogen
+    { 0x11bc11b3, 0x11ae }, // autogen
+    { 0x11bc11b4, 0x11ae }, // autogen
+    { 0x11bc11b5, 0x11ae }, // autogen
+    { 0x11bc11b6, 0x11ae }, // autogen
+    { 0x11bc11b9, 0x11ae }, // autogen
+    { 0x11bc11bf, 0x11ae }, // autogen
+    { 0x11bd11a7, 0x11bd }, // autogen
+    { 0x11bd11aa, 0x11bd }, // autogen
+    { 0x11bd11ac, 0x11bd }, // autogen
+    { 0x11bd11b1, 0x11bd }, // autogen
+    { 0x11bd11b2, 0x11bd }, // autogen
+    { 0x11bd11b3, 0x11bd }, // autogen
+    { 0x11bd11b4, 0x11bd }, // autogen
+    { 0x11bd11b5, 0x11bd }, // autogen
+    { 0x11bd11b6, 0x11bd }, // autogen
+    { 0x11bd11b9, 0x11bd }, // autogen
+    { 0x11bd11bf, 0x11bd }, // autogen
+    { 0x11bf11a8, 0x11b9 }, // autogen
+    { 0x11bf11ab, 0x11ad }, // autogen
+    { 0x11bf11af, 0x11c0 }, // autogen
+    { 0x11bf11b7, 0x11be }, // autogen
+    { 0x11bf11ba, 0x11c1 }, // autogen
+    { 0x11bf11bb, 0x11b0 }, // autogen
+    { 0x11bf11bc, 0x11ae }, // autogen
+    { 0x11bf11bd, 0x11bd }, // autogen
+    { 0x11bf11c2, 0x11a9 }, // autogen
+    { 0x11c211a7, 0x11a9 }, // autogen
+    { 0x11c211aa, 0x11a9 }, // autogen
+    { 0x11c211ac, 0x11a9 }, // autogen
+    { 0x11c211b1, 0x11a9 }, // autogen
+    { 0x11c211b2, 0x11a9 }, // autogen
+    { 0x11c211b3, 0x11a9 }, // autogen
+    { 0x11c211b4, 0x11a9 }, // autogen
+    { 0x11c211b5, 0x11a9 }, // autogen
+    { 0x11c211b6, 0x11a9 }, // autogen
+    { 0x11c211b9, 0x11a9 }, // autogen
+    { 0x11c211bf, 0x11a9 }, // autogen
+};
+/** machine generation **/
+// Real values: ᆨ, ᆩ, ᆪ, ᆫ, ᆬ, ᆭ, ᆮ, ᆯ, ᆰ, ᆱ, ᆲ, ᆳ, ᆴ, ᆵ, ᆶ, ᆷ, ᆸ, ᆹ, ᆺ, ᆻ, ᆼ, ᆽ, ᆾ, ᆿ, ᇀ, ᇁ, ᇂ
+/* start of generator
+    ㄱ, ㄲ, ㄳ, ㄴ, ㄵ, ㄶ, ㄷ, ㄹ, ㄺ, ㄻ, ㄼ, ㄽ, ㄾ, ㄿ, ㅀ, ㅁ, ㅂ, ㅄ, ㅅ, ㅆ, ㅇ, ㅈ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ = range(0x11a8, 0x11c3)
+    X = [0x11a7, ㄿ, ㄾ, ㄵ, ㅀ, ㄽ, ㄼ, ㄻ, ㅋ, ㄳ, ㅄ]
+    table = {
+     ㅎ: ㄲ,
+     ㅆ: ㄺ,
+     ㅈ: ㅈ,
+     ㅅ: ㅍ,
+     ㄹ: ㅌ,
+     ㅇ: ㄷ,
+     ㄴ: ㄶ,
+     ㅁ: ㅊ,
+     ㄱ: ㅄ,
+    }
+    fulltable = {}
+    for k, v in table.items():
+        for x in X:
+            fulltable[(k, x)] = v
+            fulltable[(x, k)] = v
+    fkeys = list(fulltable.keys())
+    fkeys.sort()
+    for k in fkeys:
+        print('    { 0x%04x%04x, 0x%04x }, // autogen' % (k[0], k[1], fulltable[k]))
+
+*/
