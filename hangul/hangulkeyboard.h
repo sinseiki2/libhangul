@@ -1951,10 +1951,10 @@ static const HangulCombinationItem hangul_combination_table_3finalsun[] = {
     { 0x11a711ab, 0x11ad }, // autogen
     { 0x11a711af, 0x11c0 }, // autogen
     { 0x11a711b7, 0x11be }, // autogen
+    { 0x11a711b8, 0x11bd }, // autogen
     { 0x11a711ba, 0x11c1 }, // autogen
     { 0x11a711bb, 0x11b0 }, // autogen
     { 0x11a711bc, 0x11ae }, // autogen
-    { 0x11a711bd, 0x11bd }, // autogen
     { 0x11a711c2, 0x11a9 }, // autogen
     { 0x11a811a7, 0x11b9 }, // autogen
     { 0x11a811aa, 0x11b9 }, // autogen
@@ -1971,10 +1971,10 @@ static const HangulCombinationItem hangul_combination_table_3finalsun[] = {
     { 0x11aa11ab, 0x11ad }, // autogen
     { 0x11aa11af, 0x11c0 }, // autogen
     { 0x11aa11b7, 0x11be }, // autogen
+    { 0x11aa11b8, 0x11bd }, // autogen
     { 0x11aa11ba, 0x11c1 }, // autogen
     { 0x11aa11bb, 0x11b0 }, // autogen
     { 0x11aa11bc, 0x11ae }, // autogen
-    { 0x11aa11bd, 0x11bd }, // autogen
     { 0x11aa11c2, 0x11a9 }, // autogen
     { 0x11ab11a7, 0x11ad }, // autogen
     { 0x11ab11aa, 0x11ad }, // autogen
@@ -1991,10 +1991,10 @@ static const HangulCombinationItem hangul_combination_table_3finalsun[] = {
     { 0x11ac11ab, 0x11ad }, // autogen
     { 0x11ac11af, 0x11c0 }, // autogen
     { 0x11ac11b7, 0x11be }, // autogen
+    { 0x11ac11b8, 0x11bd }, // autogen
     { 0x11ac11ba, 0x11c1 }, // autogen
     { 0x11ac11bb, 0x11b0 }, // autogen
     { 0x11ac11bc, 0x11ae }, // autogen
-    { 0x11ac11bd, 0x11bd }, // autogen
     { 0x11ac11c2, 0x11a9 }, // autogen
     { 0x11af11a7, 0x11c0 }, // autogen
     { 0x11af11aa, 0x11c0 }, // autogen
@@ -2011,55 +2011,55 @@ static const HangulCombinationItem hangul_combination_table_3finalsun[] = {
     { 0x11b111ab, 0x11ad }, // autogen
     { 0x11b111af, 0x11c0 }, // autogen
     { 0x11b111b7, 0x11be }, // autogen
+    { 0x11b111b8, 0x11bd }, // autogen
     { 0x11b111ba, 0x11c1 }, // autogen
     { 0x11b111bb, 0x11b0 }, // autogen
     { 0x11b111bc, 0x11ae }, // autogen
-    { 0x11b111bd, 0x11bd }, // autogen
     { 0x11b111c2, 0x11a9 }, // autogen
     { 0x11b211a8, 0x11b9 }, // autogen
     { 0x11b211ab, 0x11ad }, // autogen
     { 0x11b211af, 0x11c0 }, // autogen
     { 0x11b211b7, 0x11be }, // autogen
+    { 0x11b211b8, 0x11bd }, // autogen
     { 0x11b211ba, 0x11c1 }, // autogen
     { 0x11b211bb, 0x11b0 }, // autogen
     { 0x11b211bc, 0x11ae }, // autogen
-    { 0x11b211bd, 0x11bd }, // autogen
     { 0x11b211c2, 0x11a9 }, // autogen
     { 0x11b311a8, 0x11b9 }, // autogen
     { 0x11b311ab, 0x11ad }, // autogen
     { 0x11b311af, 0x11c0 }, // autogen
     { 0x11b311b7, 0x11be }, // autogen
+    { 0x11b311b8, 0x11bd }, // autogen
     { 0x11b311ba, 0x11c1 }, // autogen
     { 0x11b311bb, 0x11b0 }, // autogen
     { 0x11b311bc, 0x11ae }, // autogen
-    { 0x11b311bd, 0x11bd }, // autogen
     { 0x11b311c2, 0x11a9 }, // autogen
     { 0x11b411a8, 0x11b9 }, // autogen
     { 0x11b411ab, 0x11ad }, // autogen
     { 0x11b411af, 0x11c0 }, // autogen
     { 0x11b411b7, 0x11be }, // autogen
+    { 0x11b411b8, 0x11bd }, // autogen
     { 0x11b411ba, 0x11c1 }, // autogen
     { 0x11b411bb, 0x11b0 }, // autogen
     { 0x11b411bc, 0x11ae }, // autogen
-    { 0x11b411bd, 0x11bd }, // autogen
     { 0x11b411c2, 0x11a9 }, // autogen
     { 0x11b511a8, 0x11b9 }, // autogen
     { 0x11b511ab, 0x11ad }, // autogen
     { 0x11b511af, 0x11c0 }, // autogen
     { 0x11b511b7, 0x11be }, // autogen
+    { 0x11b511b8, 0x11bd }, // autogen
     { 0x11b511ba, 0x11c1 }, // autogen
     { 0x11b511bb, 0x11b0 }, // autogen
     { 0x11b511bc, 0x11ae }, // autogen
-    { 0x11b511bd, 0x11bd }, // autogen
     { 0x11b511c2, 0x11a9 }, // autogen
     { 0x11b611a8, 0x11b9 }, // autogen
     { 0x11b611ab, 0x11ad }, // autogen
     { 0x11b611af, 0x11c0 }, // autogen
     { 0x11b611b7, 0x11be }, // autogen
+    { 0x11b611b8, 0x11bd }, // autogen
     { 0x11b611ba, 0x11c1 }, // autogen
     { 0x11b611bb, 0x11b0 }, // autogen
     { 0x11b611bc, 0x11ae }, // autogen
-    { 0x11b611bd, 0x11bd }, // autogen
     { 0x11b611c2, 0x11a9 }, // autogen
     { 0x11b711a7, 0x11be }, // autogen
     { 0x11b711aa, 0x11be }, // autogen
@@ -2072,14 +2072,25 @@ static const HangulCombinationItem hangul_combination_table_3finalsun[] = {
     { 0x11b711b6, 0x11be }, // autogen
     { 0x11b711b9, 0x11be }, // autogen
     { 0x11b711bf, 0x11be }, // autogen
+    { 0x11b811a7, 0x11bd }, // autogen
+    { 0x11b811aa, 0x11bd }, // autogen
+    { 0x11b811ac, 0x11bd }, // autogen
+    { 0x11b811b1, 0x11bd }, // autogen
+    { 0x11b811b2, 0x11bd }, // autogen
+    { 0x11b811b3, 0x11bd }, // autogen
+    { 0x11b811b4, 0x11bd }, // autogen
+    { 0x11b811b5, 0x11bd }, // autogen
+    { 0x11b811b6, 0x11bd }, // autogen
+    { 0x11b811b9, 0x11bd }, // autogen
+    { 0x11b811bf, 0x11bd }, // autogen
     { 0x11b911a8, 0x11b9 }, // autogen
     { 0x11b911ab, 0x11ad }, // autogen
     { 0x11b911af, 0x11c0 }, // autogen
     { 0x11b911b7, 0x11be }, // autogen
+    { 0x11b911b8, 0x11bd }, // autogen
     { 0x11b911ba, 0x11c1 }, // autogen
     { 0x11b911bb, 0x11b0 }, // autogen
     { 0x11b911bc, 0x11ae }, // autogen
-    { 0x11b911bd, 0x11bd }, // autogen
     { 0x11b911c2, 0x11a9 }, // autogen
     { 0x11ba11a7, 0x11c1 }, // autogen
     { 0x11ba11aa, 0x11c1 }, // autogen
@@ -2114,25 +2125,14 @@ static const HangulCombinationItem hangul_combination_table_3finalsun[] = {
     { 0x11bc11b6, 0x11ae }, // autogen
     { 0x11bc11b9, 0x11ae }, // autogen
     { 0x11bc11bf, 0x11ae }, // autogen
-    { 0x11bd11a7, 0x11bd }, // autogen
-    { 0x11bd11aa, 0x11bd }, // autogen
-    { 0x11bd11ac, 0x11bd }, // autogen
-    { 0x11bd11b1, 0x11bd }, // autogen
-    { 0x11bd11b2, 0x11bd }, // autogen
-    { 0x11bd11b3, 0x11bd }, // autogen
-    { 0x11bd11b4, 0x11bd }, // autogen
-    { 0x11bd11b5, 0x11bd }, // autogen
-    { 0x11bd11b6, 0x11bd }, // autogen
-    { 0x11bd11b9, 0x11bd }, // autogen
-    { 0x11bd11bf, 0x11bd }, // autogen
     { 0x11bf11a8, 0x11b9 }, // autogen
     { 0x11bf11ab, 0x11ad }, // autogen
     { 0x11bf11af, 0x11c0 }, // autogen
     { 0x11bf11b7, 0x11be }, // autogen
+    { 0x11bf11b8, 0x11bd }, // autogen
     { 0x11bf11ba, 0x11c1 }, // autogen
     { 0x11bf11bb, 0x11b0 }, // autogen
     { 0x11bf11bc, 0x11ae }, // autogen
-    { 0x11bf11bd, 0x11bd }, // autogen
     { 0x11bf11c2, 0x11a9 }, // autogen
     { 0x11c211a7, 0x11a9 }, // autogen
     { 0x11c211aa, 0x11a9 }, // autogen
@@ -2154,7 +2154,7 @@ static const HangulCombinationItem hangul_combination_table_3finalsun[] = {
     table = {
      ㅎ: ㄲ,
      ㅆ: ㄺ,
-     ㅈ: ㅈ,
+     ㅂ: ㅈ,
      ㅅ: ㅍ,
      ㄹ: ㅌ,
      ㅇ: ㄷ,
