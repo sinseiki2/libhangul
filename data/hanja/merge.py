@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# coding=utf-8
+#-*- coding=utf-8 -*-
 
 import sys
 
@@ -108,7 +108,6 @@ for file in sys.argv[1:]:
 
     src.close()
 
-
 keys = table.keys()
 keys.sort()
 
@@ -124,14 +123,43 @@ def cmp(x, y):
     else:
 	return 0
 
+mtable = {}
+for key in keys:
+    list = table[key]
+    key = key
+
+    list.sort(cmp)
+    for i in list:
+        value   = i['value'].encode('utf-8')
+        freq    = i['freq']
+        comment = i['comment']
+        comments = comment.split(', ')
+        for c in comments:
+            if not c: continue
+            if c == key: continue
+            if c == u'지명':
+                continue
+                c += ' ' + key
+            if not c in mtable.keys():
+                mtable[c] = []
+            mtable[c].append(i)
+
+for k, v in mtable.iteritems():
+    if not k in table.keys():
+        table[k] = []
+    table[k] += v
+
+keys = table.keys()
+keys.sort()
+
 for key in keys:
     list = table[key]
     key = key.encode('utf-8')
 
     list.sort(cmp)
     for i in list:
-	value   = i['value'].encode('utf-8')
-	freq    = i['freq']
-	comment = i['comment'].encode('utf-8')
+        value   = i['value'].encode('utf-8')
+        freq    = i['freq']
+        comment = i['comment'].encode('utf-8')
+        sys.stdout.write('%s:%s:%s\n' % (key, value, comment))
 
-	sys.stdout.write('%s:%s:%s\n' % (key, value, comment))
